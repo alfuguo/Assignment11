@@ -3,32 +3,25 @@
 		<title>Online Bank</title>
 		<link rel="stylesheet" th:href="@{/css/transactions.css}"/>
 	</head>
+
 	<body>
 		<h2>Transaction History</h2>
-
-		<table>
-			<tr>
-				<th>ID</th>
-				<th>Date</th>
-				<th>Retailer</th>
-				<th>Funds In</th>
-				<th>Funds Out</th>
-			</tr>
-			<tr th:each="storedTransaction : ${transactions}">
-				<td><a th:href="@{/transactions/{transactionId}(transactionId=${storedTransaction.id})}">[[${storedTransaction.id}]]</a></td>
-				<td>[[${storedTransaction.date}]]</td>
-				<td>[[${storedTransaction.retailer}]]</td>
-				<td th:unless="${storedTransaction.type eq 'C'}"></td>
-				<td>[[${storedTransaction.amount}]]</td>
-				<td th:unless="${storedTransaction.type eq 'D'}"></td>
-
-
-
-
-			</tr>
-
-			
-		</table>
-
+			<table>
+				<tr>
+					<th>ID</th>
+					<th>Date</th>
+					<th>Retailer</th>
+					<th>Funds In</th>
+					<th>Funds Out</th>
+				</tr>
+				<tr th:each="storedTransaction : ${transactions}">
+					<td><a th:href="@{/transactions/{transactionId}(transactionId=${storedTransaction.id})}">[[${storedTransaction.id}]]</a></td>
+					<td>[[${storedTransaction.date}]]</td>
+					<td>[[${storedTransaction.retailer}]]</td>
+					<td th:unless="${storedTransaction.type eq 'C'}"></td>
+					<td>[[${storedTransaction.amount}]]</td>
+					<td th:unless="${storedTransaction.type eq 'D'}"></td>
+				</tr>
+			</table>
 	</body>
 </html>
