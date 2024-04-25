@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<div>
+<div class="transaction-details">
     <div th:if="${transaction != null}">
         <h2>Transaction ID: [[${transaction.id}]]
             <span th:if="${transaction.type =='D'}">(Debit)</span>

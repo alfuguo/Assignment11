@@ -1,11 +1,11 @@
 <html xmlns:th="http://thymeleaf.org">
 	<head>
 		<title>Online Bank</title>
-		<link rel="stylesheet" href="/css/transactions.css"/>
+		<link rel="stylesheet" th:href="@{/css/transactions.css}"/>
 	</head>
 	<body>
 		<h2>Transaction History</h2>
-		
+
 		<table>
 			<tr>
 				<th>ID</th>
@@ -29,5 +29,6 @@
 
 			
 		</table>
+
 	</body>
 </html>
